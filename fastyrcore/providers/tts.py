@@ -3,13 +3,15 @@ Text-to-Speech (TTS) provider abstraction and ElevenLabs implementation.
 """
 
 import requests
+from abc import ABC, abstractmethod
 from fastyrcore.config import Config
 from fastyrcore.models.typing import TTSRequest, TTSResponse
 
 
-class TTSProvider:
+class TTSProvider(ABC):
     """Base class for Text-to-Speech providers."""
 
+    @abstractmethod
     def synthesize(self, request: TTSRequest) -> TTSResponse:
         """
         Abstract method to synthesize text to audio.

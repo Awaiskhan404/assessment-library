@@ -2,14 +2,16 @@
 Speech-to-Text (STT) provider abstraction and DeepGram implementation.
 """
 
+from abc import ABC, abstractmethod
+from fastyrcore.models.typing import STTRequest, STTResponse
 import requests
 from fastyrcore.config import Config
-from fastyrcore.models.typing import STTRequest, STTResponse
 
 
-class STTProvider:
+class STTProvider(ABC):
     """Base class for Speech-to-Text providers."""
 
+    @abstractmethod
     def transcribe(self, request: STTRequest) -> STTResponse:
         """
         Abstract method to transcribe audio to text.

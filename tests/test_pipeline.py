@@ -4,9 +4,9 @@ Test suite for the AIPipeline class using pytest.
 
 import pytest
 from fastyrcore.pipeline import AIPipeline
-from fastyrcore.stt import DeepGramSTT
-from fastyrcore.llm import OpenAILLM
-from fastyrcore.tts import ElevenLabsTTS
+from fastyrcore.providers.stt import DeepGramSTT
+from fastyrcore.providers.llm import OpenAILLM
+from fastyrcore.providers.tts import ElevenLabsTTS
 from fastyrcore.models.typing import STTRequest, LLMRequest, TTSRequest
 
 

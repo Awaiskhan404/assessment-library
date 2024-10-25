@@ -2,9 +2,9 @@
 Pipeline module to orchestrate the AI phone call process using STT, LLM, and TTS providers.
 """
 
-from fastyrcore.stt import STTProvider
-from fastyrcore.llm import LLMProvider
-from fastyrcore.tts import TTSProvider
+from fastyrcore.providers.stt import STTProvider
+from fastyrcore.providers.llm import LLMProvider
+from fastyrcore.providers.tts import TTSProvider
 from fastyrcore.models.typing import STTRequest, LLMRequest, TTSRequest
 
 

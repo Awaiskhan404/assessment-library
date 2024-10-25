@@ -3,13 +3,15 @@ Language Model (LLM) provider abstraction and OpenAI implementation.
 """
 
 import requests
+from abc import ABC, abstractmethod
 from fastyrcore.config import Config
 from fastyrcore.models.typing import LLMRequest, LLMResponse
 
 
-class LLMProvider:
+class LLMProvider(ABC):
     """Base class for Language Model providers."""
 
+    @abstractmethod
     def generate_response(self, request: LLMRequest) -> LLMResponse:
         """
         Abstract method to generate a response from a given prompt.
@@ -24,7 +26,7 @@ class LLMProvider:
 
 
 class OpenAILLM(LLMProvider):
-    """OpenAI implementation of the LLMProvider interface."""
+    """OpenAI's implementation of the LLMProvider interface."""
 
     def generate_response(self, request: LLMRequest) -> LLMResponse:
         """
