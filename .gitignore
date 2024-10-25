@@ -5,3 +5,8 @@ node_modules
 .vscode
 dist/
 fastyrcore.egg-info/
+
+build/
+.DS_Store
+
+*.pyc

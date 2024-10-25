@@ -43,12 +43,12 @@ class OpenAILLM(LLMProvider):
             "Content-Type": "application/json",
         }
         data = {
-            "model": "text-davinci-003",
-            "prompt": request.prompt,
+            "model": "gpt-4",
+            "messages": [{"role": "user", "content": "Tell me a joke!"}],
             "temperature": 0.7,
             "max_tokens": 150,
         }
-        response = requests.post("https://api.openai.com/v1/completions", headers=headers, json=data)
+        response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=data)
         response.raise_for_status()
-        response_text = response.json()["choices"][0]["text"].strip()
+        response_text = response.json()["choices"][0]["message"]["content"].strip()
         return LLMResponse(response=response_text)

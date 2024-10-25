@@ -39,8 +39,9 @@ class DeepGramSTT(STTProvider):
             STTResponse: The transcription result.
         """
         headers = {"Authorization": f"Token {Config.DEEPGRAM_API_KEY}"}
+        payload = {"url": str(request.audio_url)}
         response = requests.post(
-            "https://api.deepgram.com/v1/listen", headers=headers, json=request.dict()
+            "https://api.deepgram.com/v1/listen", headers=headers, json=payload
         )
         response.raise_for_status()
         transcript = response.json()["results"]["channels"][0]["alternatives"][0]["transcript"]
