@@ -2,3 +2,6 @@
 .venv
 node_modules
 .idea
+.vscode
+dist/
+fastyrcore.egg-info/
