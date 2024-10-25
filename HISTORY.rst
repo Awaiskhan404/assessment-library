@@ -2,6 +2,9 @@
 
 History
 ---------------------
+1.0.0.dev2 (2024-10-25)
++++++++++++++++
+* Unit test fixes and some architecture changes
 
 1.0.0.dev1 (2024-10-25)
 +++++++++++++++
